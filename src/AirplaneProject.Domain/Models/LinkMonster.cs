@@ -1,0 +1,19 @@
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace AirplaneProject.Domain.Models
+{
+    public class LinkMonster : Card
+    {
+        [BsonElement("LinkSummonRequirement")]
+        public string LinkSummonRequirement { get; set; }
+
+        [BsonElement("LinkGrade")]
+        public short LinkGrade { get; set; }
+
+        [BsonElement("MonstersNeededMin")]
+        public short MonstersNeededMin { get; set; }
+        
+        [BsonElement("MonstersNeededMax")]
+        public short MonstersNeededMax { get; set; }
+    }
+}

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\NATHANPC\.nuget\packages\microsoft.net.test.sdk\16.5.0\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\NATHANPC\.nuget\packages\microsoft.testplatform.testhost\16.5.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\microsoft.testplatform.testhost\16.5.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\mstest.testadapter\2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\mstest.testadapter\2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\mstest.testadapter\2.1.1\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\NATHANPC\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\NATHANPC\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AirplaneProject.1792924396.00" t="ExcludeRecursive" />
+    <e p="C:\yugiohSevensFinal\AirplaneApi-mongo" t="IncludeFlat">
+      <e p="AirplaneProject.sln" t="IncludeFlat" />
+      <e p="Application" t="Include">
+        <e p="1 - Presentation" t="Include" />
+        <e p="2 - Services" t="Include" />
+        <e p="3 - Application" t="Include" />
+        <e p="4 - Domain" t="Include" />
+        <e p="5 - Infrastructure" t="Include">
+          <e p="5.1 - Data" t="Include" />
+          <e p="5.2 - CrossCutting" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="src\.editorconfig" t="Include" />
+      <e p="src\AirplaneProject.Application" t="IncludeRecursive">
+        <e p="AirplaneProject.Application.csproj" t="IncludeRecursive" />
+        <e p="AutoMapper" t="Include">
+          <e p="AutoMapperConfig.cs" t="Include" />
+          <e p="DomainToDtoMappingProfile.cs" t="Include" />
+          <e p="DtoToDomainMappingProfile.cs" t="Include" />
+        </e>
+        <e p="Bases" t="Include">
+          <e p="Dto.cs" t="Include" />
+          <e p="DtoValidation.cs" t="Include" />
+          <e p="EntityDto.cs" t="Include" />
+          <e p="ListResultDto.cs" t="Include" />
+          <e p="ResultDto.cs" t="Include" />
+          <e p="ServiceApp.cs" t="Include" />
+          <e p="SingleResultDto.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Dtos" t="Include" />
+        <e p="Extensions" t="Include">
+          <e p="StringExtensions.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IAppService.cs" t="Include" />
+          <e p="IEntityDto.cs" t="Include" />
+          <e p="IListResultDto.cs" t="Include" />
+          <e p="IResultDto.cs" t="Include" />
+          <e p="ISingleResultDto.cs" t="Include" />
+        </e>
+        <e p="Messages" t="Include">
+          <e p="MensagensAplicacao.Designer.cs" t="Include" />
+          <e p="MensagensAplicacao.resx" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="AirplaneProject.Application.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include" />
+        <e p="Validations" t="Include" />
+      </e>
+      <e p="src\AirplaneProject.Core" t="IncludeRecursive">
+        <e p="AirplaneProject.Core.csproj" t="IncludeRecursive" />
+        <e p="Bases" t="Include">
+          <e p="Service.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Extensions" t="Include">
+          <e p="StringExtensions.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IEntityValidation.cs" t="Include" />
+          <e p="ILookupDto.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="IResult.cs" t="Include" />
+          <e p="IService.cs" t="Include" />
+          <e p="ISingleResult.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+          <e p="IUser.cs" t="Include" />
+        </e>
+        <e p="Messages" t="Include">
+          <e p="MensagensNegocio.Designer.cs" t="Include" />
+          <e p="MensagensNegocio.resx" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Dtos" t="Include">
+            <e p="ErrorDto.cs" t="Include" />
+          </e>
+          <e p="Results" t="Include">
+            <e p="EdicaoResult.cs" t="Include" />
+            <e p="ExclusaoResult.cs" t="Include" />
+            <e p="InclusaoResult.cs" t="Include" />
+            <e p="SingleResult.cs" t="Include" />
+          </e>
+          <e p="Validations" t="Include">
+            <e p="EntityValidation.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="AirplaneProject.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include" />
+        <e p="Services" t="Include">
+          <e p="CardService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="src\AirplaneProject.CrossCutting" t="IncludeRecursive">
+        <e p="AirplaneProject.CrossCutting.csproj" t="IncludeRecursive" />
+        <e p="Authorization" t="Include">
+          <e p="ClaimRequirement.cs" t="Include" />
+          <e p="ClaimsRequirementHandler.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IoC" t="Include">
+          <e p="NativeInjectorBootStraper.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="AspNetUser.cs" t="Include" />
+          <e p="UserLogin.cs" t="Include" />
+          <e p="UserRegistration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="AirplaneProject.CrossCutting.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="src\AirplaneProject.Domain" t="IncludeRecursive">
+        <e p="AirplaneProject.Domain.csproj" t="IncludeRecursive" />
+        <e p="Attributes" t="Include">
+          <e p="EntityAttribute.cs" t="Include" />
+        </e>
+        <e p="Bases" t="Include">
+          <e p="Entity.cs" t="Include" />
+          <e p="LookupDto.cs" t="Include" />
+          <e p="SortByDto.cs" t="Include" />
+          <e p="ValueObject.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Enums" t="Include">
+          <e p="CardTypeEnum.cs" t="Include" />
+          <e p="ElementEnum.cs" t="Include" />
+          <e p="EnumExtensions.cs" t="Include" />
+          <e p="EnumOperador.cs" t="Include" />
+          <e p="EnumResultadoAcao.cs" t="Include" />
+          <e p="EnumSituacao.cs" t="Include" />
+          <e p="MonsterCardClassEnum.cs" t="Include" />
+          <e p="MonsterTypeEnum.cs" t="Include" />
+          <e p="SpellCardClassEnum.cs" t="Include" />
+          <e p="TrapCardClassEnum.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IEntity.cs" t="Include" />
+          <e p="ILookupDto.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Book.cs" t="Include" />
+          <e p="Card.cs" t="Include" />
+          <e p="CardDatabaseSettings.cs" t="Include" />
+          <e p="LinkMonster.cs" t="Include" />
+          <e p="LinkMonsterArrows.cs" t="Include" />
+          <e p="Monster.cs" t="Include" />
+          <e p="MonsterClass" t="Include">
+            <e p="FlipMonster.cs" t="Include" />
+            <e p="GeminiMonster.cs" t="Include" />
+            <e p="SpiritMonster.cs" t="Include" />
+            <e p="TokenMonster.cs" t="Include" />
+            <e p="UnionMonster.cs" t="Include" />
+          </e>
+          <e p="PendulumMonster.cs" t="Include" />
+          <e p="SpellCard.cs" t="Include" />
+          <e p="SynchroMonster.cs" t="Include" />
+          <e p="TrapCard.cs" t="Include" />
+          <e p="XyzMonster.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="AirplaneProject.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="src\AirplaneProject.WebApi" t="IncludeRecursive">
+        <e p="AirplaneProject.WebApi.csproj" t="IncludeRecursive" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configurations" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="AutoMapperSetup.cs" t="Include" />
+          <e p="IdentitySetup.cs" t="Include" />
+          <e p="SwaggerSetup.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="CardController.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="AirplaneProject.WebApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="primeiro-jhonatan - FTP.pubxml" t="Include" />
+            <e p="primeiro-jhonatan - ReadOnly - FTP.pubxml" t="Include" />
+            <e p="primeiro-jhonatan - Web Deploy.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="Tests" t="Include">
+        <e p="AirplaneProject.IntegrationTests" t="IncludeRecursive">
+          <e p="AirplaneProject.IntegrationTests.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="EntityFrameworkTests" t="Include" />
+          <e p="Helpers" t="Include">
+            <e p="HtmlClientExtensions.cs" t="Include" />
+            <e p="HtmlHelpers.cs" t="Include" />
+            <e p="MapperHelper.cs" t="Include" />
+            <e p="Utilities.cs" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="AirplaneProject.IntegrationTests.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>
