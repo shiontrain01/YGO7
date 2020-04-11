@@ -1,0 +1,11 @@
+bin/
+obj/
+git/
+.vs/
+*.cache
+*.props
+*.targets
+*.dll
+*.pdb
+*.cache
+*.props
