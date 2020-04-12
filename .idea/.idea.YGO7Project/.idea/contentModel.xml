@@ -62,7 +62,9 @@
             </e>
           </e>
         </e>
-        <e p="Services" t="Include" />
+        <e p="Services" t="Include">
+          <e p="CardAppService.cs" t="Include" />
+        </e>
         <e p="Validations" t="Include" />
         <e p="YGO7.Application.csproj" t="IncludeRecursive" />
       </e>

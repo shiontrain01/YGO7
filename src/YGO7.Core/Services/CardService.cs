@@ -20,25 +20,25 @@ namespace YGO7.Core.Services
         }
         
 
-        public List<Card> ListGet() =>
+        public Task<ISingleResult<Card>> ListGet() =>
             _cards.Find(card => true).ToList();
 
-        public Card GetCard(string id) =>
+        public Task<ISingleResult<Card>> GetCard(string id) =>
             _cards.Find<Card>(card => card.Id == id).FirstOrDefault();
 
-        public Card Create(Card card)
+        public Task<ISingleResult<Card>> Create(Card card)
         {
             _cards.InsertOne(card);
             return card;
         }
 
-        public void Update(string id, Card cardIn) =>
+        public Task<ISingleResult<Card>> Update(string id, Card cardIn) =>
             _cards.ReplaceOne(card => card.Id == id, cardIn);
 
         public void Remove(Card cardIn) =>
             _cards.DeleteOne(card => card.Id == cardIn.Id);
 
-        public void Remove(string id) =>
-            _cards.DeleteOne(card => card.Id == id);
+        public Task<ISingleResult<Card>> Remove(string id) =>
+           return new _cards.DeleteOne(card => card.Id == id);
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using YGO7.Application.Interfaces;
+using YGO7.Application.Services;
 
 namespace YGO7.CrossCutting.IoC
 {
