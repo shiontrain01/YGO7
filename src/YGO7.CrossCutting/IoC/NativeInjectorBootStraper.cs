@@ -15,13 +15,10 @@ namespace YGO7.CrossCutting.IoC
         public static void RegisterServices(this IServiceCollection services, IConfiguration config, bool isTest)
         {
             // AspNetUser
-           // services.AddScoped<IUser, AspNetUser>();
-           
-           // AspNetUser
-           //services.AddScoped<IUser, AspNetUser>();
-            
+           services.AddScoped<IUser, AspNetUser>();
+
            // Application - Services
-         //  services.AddScoped< ICardAppService, CardService>();
+           services.AddScoped< ICardAppService, CardAppService>();
 
            // Core - Services
            services.AddScoped<ICardService, CardService>();
