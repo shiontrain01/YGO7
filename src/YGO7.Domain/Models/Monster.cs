@@ -1,4 +1,5 @@
-﻿using YGO7.Domain.Enums;
+﻿using System.Collections.Generic;
+using YGO7.Domain.Enums;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Models
@@ -16,6 +17,5 @@ namespace YGO7.Domain.Models
         
         [BsonElement("MonsterCardClass")]
         public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
-
     }
 }
