@@ -82,8 +82,11 @@ namespace YGO7.WebApi
             services.AddMediatR(typeof(Startup));
 
             // ASP.NET HttpContext dependency
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<CardService>();
+            
+            /*services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<CardService>();*/
+            
+            
 
             services.RegisterServices(Configuration, false);
             

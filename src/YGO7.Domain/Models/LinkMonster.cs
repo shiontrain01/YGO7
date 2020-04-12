@@ -2,7 +2,7 @@
 
 namespace YGO7.Domain.Models
 {
-    public class LinkMonster : Card
+    public class LinkMonster : Monster
     {
         [BsonElement("LinkSummonRequirement")]
         public string LinkSummonRequirement { get; set; }

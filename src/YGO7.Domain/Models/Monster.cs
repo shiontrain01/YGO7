@@ -17,5 +17,6 @@ namespace YGO7.Domain.Models
         
         [BsonElement("MonsterCardClass")]
         public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
+
     }
 }

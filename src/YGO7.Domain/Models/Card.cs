@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using YGO7.Domain.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using YGO7.Domain.Bases;
 
 namespace YGO7.Domain.Models
 {
-    public class Card
+    public class Card : Entity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         
         [BsonElement("CardId")]
-        public String CardId { get; set; }
+        public string CardId { get; set; }
         
         [BsonElement("CardName")]
         public string CardName { get; set; }

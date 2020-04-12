@@ -8,7 +8,6 @@
         <e p="3 - Application" t="Include" />
         <e p="4 - Domain" t="Include" />
         <e p="5 - Infrastructure" t="Include">
-          <e p="5.1 - Data" t="Include" />
           <e p="5.2 - CrossCutting" t="Include" />
         </e>
       </e>
@@ -30,12 +29,23 @@
           <e p="SingleResultDto.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Dtos" t="Include" />
+        <e p="Dtos" t="Include">
+          <e p="EffectMonsterDto.cs" t="Include" />
+          <e p="FusionMonsterDto.cs" t="Include" />
+          <e p="LinkMonsterDto.cs" t="Include" />
+          <e p="PendulumMonsterDto.cs" t="Include" />
+          <e p="RitualMonsterDto.cs" t="Include" />
+          <e p="SpellCardDto.cs" t="Include" />
+          <e p="SynchroMonsterDto.cs" t="Include" />
+          <e p="TrapCardDto.cs" t="Include" />
+          <e p="XyzMonsterDto.cs" t="Include" />
+        </e>
         <e p="Extensions" t="Include">
           <e p="StringExtensions.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">
           <e p="IAppService.cs" t="Include" />
+          <e p="ICardAppService.cs" t="Include" />
           <e p="IEntityDto.cs" t="Include" />
           <e p="IListResultDto.cs" t="Include" />
           <e p="IResultDto.cs" t="Include" />
@@ -65,6 +75,7 @@
           <e p="StringExtensions.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">
+          <e p="ICardService.cs" t="Include" />
           <e p="IEntityValidation.cs" t="Include" />
           <e p="ILookupDto.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
@@ -157,9 +168,9 @@
           <e p="ILookupDto.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Book.cs" t="Include" />
           <e p="Card.cs" t="Include" />
           <e p="CardDatabaseSettings.cs" t="Include" />
+          <e p="FusionMonster.cs" t="Include" />
           <e p="LinkMonster.cs" t="Include" />
           <e p="LinkMonsterArrows.cs" t="Include" />
           <e p="Monster.cs" t="Include" />
@@ -171,6 +182,7 @@
             <e p="UnionMonster.cs" t="Include" />
           </e>
           <e p="PendulumMonster.cs" t="Include" />
+          <e p="RitualMonster.cs" t="Include" />
           <e p="SpellCard.cs" t="Include" />
           <e p="SynchroMonster.cs" t="Include" />
           <e p="TrapCard.cs" t="Include" />

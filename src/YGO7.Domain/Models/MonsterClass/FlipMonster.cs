@@ -6,5 +6,8 @@ namespace YGO7.Domain.Models.MonsterClass
     {
         [BsonElement("FlipEffect")]
         public string FlipEffect { get; set; }
+        
+        [BsonElement("Stars")]
+        public short Stars { get; set; }
     }
 }

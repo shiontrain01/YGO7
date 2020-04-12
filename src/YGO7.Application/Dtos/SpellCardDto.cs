@@ -1,0 +1,25 @@
+﻿using System;
+using YGO7.Domain.Enums;
+
+namespace YGO7.Application.Dtos
+{
+    public class SpellCardDto
+    {
+        public string CardId { get; set; }
+        
+        public string CardName { get; set; }
+        
+        public string CardAbility { get; set; }
+        
+        public CardTypeEnum CardType { get; set; }
+        
+        public short CardEffectSpeed { get; set; }
+        
+        public Boolean HaveEffect { get; set; }
+        
+        public ElementEnum CardElement { get; set; }
+        
+        public SpellCardClassEnum SpellCardClass { get; set; }
+
+    }
+}

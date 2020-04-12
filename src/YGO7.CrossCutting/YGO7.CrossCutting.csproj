@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\YGO7.Application\YGO7.Application.csproj" />
     <ProjectReference Include="..\YGO7.Core\YGO7.Core.csproj" />
   </ItemGroup>
 

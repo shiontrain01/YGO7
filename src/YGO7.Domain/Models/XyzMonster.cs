@@ -15,5 +15,6 @@ namespace YGO7.Domain.Models
         
         [BsonElement("MaterialsNeededMax")]
         public short MaterialsNeededMax { get; set; }
+        
     }
 }

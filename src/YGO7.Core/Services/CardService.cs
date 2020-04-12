@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using YGO7.Domain.Models;
 using MongoDB.Driver;
+using YGO7.Core.Interfaces;
 
 namespace YGO7.Core.Services
 {
-    public class CardService
+    public class CardService : ICardService
     {
         private readonly IMongoCollection<Card> _cards;
 
@@ -15,6 +18,7 @@ namespace YGO7.Core.Services
 
             _cards = database.GetCollection<Card>(settings.CardsCollectionName);
         }
+        
 
         public List<Card> Get() =>
             _cards.Find(card => true).ToList();
