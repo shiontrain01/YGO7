@@ -1,13 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using YGO7.Domain.Models;
 
 namespace YGO7.Core.Interfaces
 {
     public interface ICardService
     {
-        //Task<ISingleResult<Card>> List();
+        List<Card> ListGet();
 
-        Card Get(string id);
+        Card GetCard(string id);
 
         Card Create(Card entity);
 

@@ -20,10 +20,10 @@ namespace YGO7.Core.Services
         }
         
 
-        public List<Card> Get() =>
+        public List<Card> ListGet() =>
             _cards.Find(card => true).ToList();
 
-        public Card Get(string id) =>
+        public Card GetCard(string id) =>
             _cards.Find<Card>(card => card.Id == id).FirstOrDefault();
 
         public Card Create(Card card)
