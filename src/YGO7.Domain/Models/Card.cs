@@ -13,7 +13,7 @@ namespace YGO7.Domain.Models
         public string Id { get; set; }
         
         [BsonElement("CardId")]
-        public long CardId { get; set; }
+        public String CardId { get; set; }
         
         [BsonElement("CardName")]
         public string CardName { get; set; }
@@ -29,11 +29,10 @@ namespace YGO7.Domain.Models
         
         [BsonElement("HaveEffect")]
         public Boolean HaveEffect { get; set; }
-
-        [BsonElement("MonsterType")]
-        public List<MonsterTypeEnum> MonsterType { get; set; }
-  
+        
         [BsonElement("CardElement")]
         public ElementEnum CardElement { get; set; }
+        
+      
     }
 }

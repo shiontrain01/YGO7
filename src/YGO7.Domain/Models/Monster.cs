@@ -11,7 +11,11 @@ namespace YGO7.Domain.Models
         [BsonElement("CardDefense")]
         public short CardDefense { get; set; }
         
+        [BsonElement("MonsterType")]
+        public MonsterTypeEnum MonsterType { get; set; }
+        
         [BsonElement("MonsterCardClass")]
-        public MonsterCardClassEnum MonsterCardClass { get; set; }
+        public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
+
     }
 }

@@ -8,6 +8,8 @@
     Fire= 4,
     Light= 5,
     Water= 6,
-    Wind= 7
+    Wind= 7,
+    Spell = 8,
+    Trap = 9
     }
 }

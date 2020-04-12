@@ -172,7 +172,6 @@
           <e p="ILookupDto.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Book.cs" t="Include" />
           <e p="Card.cs" t="Include" />
           <e p="CardDatabaseSettings.cs" t="Include" />
           <e p="LinkMonster.cs" t="Include" />
