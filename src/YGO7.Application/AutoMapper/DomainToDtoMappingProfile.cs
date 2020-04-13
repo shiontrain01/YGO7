@@ -14,6 +14,7 @@ namespace YGO7.Application.AutoMapper
             CreateMap<Entity, EntityDto>();
             
             
+            CreateMap<Card, EffectMonsterDto>();
             CreateMap<FlipMonster, EffectMonsterDto>();
             CreateMap<GeminiMonster, EffectMonsterDto>();
             CreateMap<SpiritMonster, EffectMonsterDto>();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -26,10 +27,22 @@ namespace YGO7.Application.Services
 
             var listaAll = await _service.GetAll();
 
-            List<EffectMonsterDto> personViews =
-                Mapper.Map<List<Card>, List<EffectMonsterDto>>(listaAll.Data.ToList());
+            try
+            {
+                List<EffectMonsterDto> personViews =
+                    Mapper.Map<List<Card>, List<EffectMonsterDto>>(listaAll.Data.ToList());
 
-            return new ListResultDto<EffectMonsterDto>(personViews);
+                return new ListResultDto<EffectMonsterDto>(personViews);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+
+
+            
         }
 
         public async Task<ISingleResultDto<EffectMonsterDto>> Get(string id)

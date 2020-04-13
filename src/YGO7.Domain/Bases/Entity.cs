@@ -1,15 +1,19 @@
 ﻿using YGO7.Domain.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Bases
 {
 	public abstract class Entity : IEntity
     {
 		[Key]
-		public int Id { get; set; }
+		[BsonId]
+		[BsonRepresentation(BsonType.ObjectId)]
+		public string Id { get; set; }
 
-		public virtual int Key { get { return this.Id; } }
+		public virtual string Key { get { return this.Id; } }
 
 		public virtual int ParentKey { get { return 0; } }
 

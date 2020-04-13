@@ -4,6 +4,6 @@ namespace YGO7.Application.Bases
 {
 	public class EntityDto : Dto, IEntityDto
 	{
-		public int Id { get; set; }
+		public string Id { get; set; }
 	}
 }

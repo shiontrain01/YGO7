@@ -2,6 +2,6 @@
 {
 	public interface IEntityDto
 	{
-		int Id { get; set; }
+		string Id { get; set; }
 	}
 }

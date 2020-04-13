@@ -9,10 +9,6 @@ namespace YGO7.Domain.Models
 {
     public class Card : Entity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        
         [BsonElement("CardId")]
         public string CardId { get; set; }
         

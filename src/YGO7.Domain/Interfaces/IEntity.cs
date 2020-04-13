@@ -4,8 +4,8 @@ namespace YGO7.Domain.Interfaces
 {
 	public interface IEntity
 	{
-		int Id { get; }
-		int Key { get; }
+		string Id { get; }
+		string Key { get; }
 		string Value { get; }
 		int ParentKey { get; }
 	}

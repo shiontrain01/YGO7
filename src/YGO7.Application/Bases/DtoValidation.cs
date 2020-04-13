@@ -13,7 +13,7 @@ namespace YGO7.Application.Bases
 		protected void ValidarId()
 		{
 			RuleFor(c => c.Id)
-				.NotEqual(0);
+				.NotEqual("");
 		}
 	}
 }

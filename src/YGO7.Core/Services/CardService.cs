@@ -33,10 +33,10 @@ namespace YGO7.Core.Services
             }
             catch (Exception)
             {
-                return null;
+                return new ListResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return null;
+            return new ListResult<Card>(entity);
         }
 
         public async Task<ISingleResult<Card>> Get(string id)
