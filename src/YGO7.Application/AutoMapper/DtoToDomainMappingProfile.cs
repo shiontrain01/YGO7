@@ -2,7 +2,6 @@
 using YGO7.Domain.Models;
 using AutoMapper;
 using YGO7.Application.Dtos;
-using YGO7.Domain.Models.MonsterClass;
 
 namespace YGO7.Application.AutoMapper
 {
@@ -10,12 +9,7 @@ namespace YGO7.Application.AutoMapper
     {
 		public DtoToDomainMappingProfile()
 		{
-
-			CreateMap<EffectMonsterDto , FlipMonster >();
-			CreateMap<EffectMonsterDto,GeminiMonster >();
-			CreateMap<EffectMonsterDto,SpiritMonster >();
-			CreateMap<EffectMonsterDto,TokenMonster >();
-			CreateMap<EffectMonsterDto,UnionMonster >();
+			CreateMap<EffectMonsterDto,Monster >();
 			CreateMap<FusionMonsterDto,FusionMonster >();
 			CreateMap<LinkMonsterDto,LinkMonster >();
 			CreateMap<PendulumMonsterDto,PendulumMonster >();

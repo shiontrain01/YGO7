@@ -79,6 +79,7 @@
         <e p="Interfaces" t="Include">
           <e p="ICardService.cs" t="Include" />
           <e p="IEntityValidation.cs" t="Include" />
+          <e p="IListResult.cs" t="Include" />
           <e p="ILookupDto.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
           <e p="IResult.cs" t="Include" />
@@ -99,6 +100,7 @@
             <e p="EdicaoResult.cs" t="Include" />
             <e p="ExclusaoResult.cs" t="Include" />
             <e p="InclusaoResult.cs" t="Include" />
+            <e p="ListResult.cs" t="Include" />
             <e p="SingleResult.cs" t="Include" />
           </e>
           <e p="Validations" t="Include">
@@ -161,6 +163,7 @@
           <e p="EnumResultadoAcao.cs" t="Include" />
           <e p="EnumSituacao.cs" t="Include" />
           <e p="MonsterCardClassEnum.cs" t="Include" />
+          <e p="MonsterSecondarySpecializationEnum.cs" t="Include" />
           <e p="MonsterTypeEnum.cs" t="Include" />
           <e p="SpellCardClassEnum.cs" t="Include" />
           <e p="TrapCardClassEnum.cs" t="Include" />
@@ -174,15 +177,8 @@
           <e p="CardDatabaseSettings.cs" t="Include" />
           <e p="FusionMonster.cs" t="Include" />
           <e p="LinkMonster.cs" t="Include" />
-          <e p="LinkMonsterArrows.cs" t="Include" />
           <e p="Monster.cs" t="Include" />
-          <e p="MonsterClass" t="Include">
-            <e p="FlipMonster.cs" t="Include" />
-            <e p="GeminiMonster.cs" t="Include" />
-            <e p="SpiritMonster.cs" t="Include" />
-            <e p="TokenMonster.cs" t="Include" />
-            <e p="UnionMonster.cs" t="Include" />
-          </e>
+          <e p="MonsterSecondaryEffect.cs" t="Include" />
           <e p="PendulumMonster.cs" t="Include" />
           <e p="RitualMonster.cs" t="Include" />
           <e p="SpellCard.cs" t="Include" />

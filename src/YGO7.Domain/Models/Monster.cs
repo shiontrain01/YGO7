@@ -17,6 +17,20 @@ namespace YGO7.Domain.Models
         
         [BsonElement("MonsterCardClass")]
         public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
-
+        
+        [BsonElement("MonsterSecondaryEffect")]
+        public string MonsterSecondaryEffect { get; set; }
+        
+        [BsonElement("Stars")]
+        public short Stars { get; set; }
+        
+        [BsonElement("PendulumMonster")]
+        public PendulumMonster  PendulumMonster { get; set; }
+        
+        [BsonElement("TunerMonster")]
+        public bool  TunerMonster { get; set; }
+        
+        [BsonElement("MonsterSecondarySpecialization")]
+        public List<MonsterSecondarySpecializationEnum> MonsterSecondarySpecialization { get; set; }
     }
 }

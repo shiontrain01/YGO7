@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Models
 {
@@ -15,5 +16,29 @@ namespace YGO7.Domain.Models
         
         [BsonElement("MonstersNeededMax")]
         public short MonstersNeededMax { get; set; }
+        
+        [BsonElement("ArrowSuperiorEsquerdo")]
+        public bool ArrowSuperiorEsquerdo { get; set; }
+        
+        [BsonElement("ArrowSuperiorCentro")]
+        public bool ArrowSuperiorCentro { get; set; }
+        
+        [BsonElement("ArrowSuperiorDireito")]
+        public bool ArrowSuperiorDireito { get; set; }
+        
+        [BsonElement("ArrowCentralEsquerdo")]
+        public bool ArrowCentralEsquerdo { get; set; }
+        
+        [BsonElement("ArrowCentralDireito")]
+        public bool ArrowCentralDireito { get; set; }
+        
+        [BsonElement("ArrowInferiorEsquerdo")]
+        public bool ArrowInferiorEsquerdo { get; set; }
+        
+        [BsonElement("ArrowInferiorCentral")]
+        public bool ArrowInferiorCentral { get; set; }
+        
+        [BsonElement("ArrowInferiorDireito")]
+        public bool ArrowInferiorDireito { get; set; }
     }
 }
