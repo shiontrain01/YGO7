@@ -8,6 +8,7 @@ using YGO7.Application.Bases;
 using YGO7.Application.Dtos;
 using YGO7.Application.Interfaces;
 using YGO7.Core.Interfaces;
+using YGO7.Domain.Bases;
 using YGO7.Domain.Enums;
 using YGO7.Domain.Models;
 
@@ -62,66 +63,93 @@ namespace YGO7.Application.Services
             // entao posso mudar a entidade 
             //priceso saber um dado que diferete as cartas 
             // saber um dado q difere os tipos de monstros 
+
+            ;
+            var cardTypeOperation = dto.CardType switch
+            {
+                CardTypeEnum.Monster => MapeamentoClasseMonstro(dto),
+                CardTypeEnum.Spell => MapeamentoTipoCartaSpell(dto),
+                CardTypeEnum.Trap => MapeamentoTipoCartaTrap(dto),
+                _ => throw new NotImplementedException()
+            };
             
-            var cardTypeOperation = 0;
-            if (dto.CardType == CardTypeEnum.Monster)
+            
+            async Task<ISingleResultDto<EntityDto>> MapeamentoTipoCartaSpell(CompleteCardInformationDto dto)
             {
-                 cardTypeOperation = 1;
+                var evento = Mapper.Map<SpellCard>(dto);
+                var result =  await _service.Incluir(evento);
+
+                var resultDto = new SingleResultDto<EntityDto>(result);
+                resultDto.SetData(result, Mapper);
+                return resultDto;
             }
-            if (dto.CardType == CardTypeEnum.Spell)
+            async Task<ISingleResultDto<EntityDto>> MapeamentoTipoCartaTrap(CompleteCardInformationDto dto)
             {
-                 cardTypeOperation = 2;
+                var evento = Mapper.Map<TrapCard>(dto);
+                var result =  await _service.Incluir(evento);
+
+                var resultDto = new SingleResultDto<EntityDto>(result);
+                resultDto.SetData(result, Mapper);
+                return resultDto;
             }
-            if (dto.CardType == CardTypeEnum.Trap)
+            
+
+             var MonsterClassOperation = dto.MonsterCardClass switch
+             {
+                 MonsterCardClassEnum.Fusion => 1,
+                 MonsterCardClassEnum.Link => 2,
+                 MonsterCardClassEnum.Synchro => 3,
+                 MonsterCardClassEnum.Xyz => 4,
+                 _ => 0
+             };
+             
+            // eu quero fazer com que o swtich case me de o tipo do monstro
+            // tendo o tipo do monstro passado como parametro no switch case
+            // eu quero que ele seja a chamada da função do mapeamento de mosntro
+            // assim so vou ter uma função de mapeamento pra cada classe
+            async Task<ISingleResultDto<EntityDto>> MapeamentoClasseMonstro(CompleteCardInformationDto dto)
             {
-                 cardTypeOperation = 3;
+                Task<ISingleResultDto<EntityDto>> MonsterClassOperation;
+                switch (dto.MonsterCardClass)
+                {
+                    case  MonsterCardClassEnum.Fusion:
+                        var entidade = Mapper.Map<FusionMonster>(dto);
+                        cardTypeOperation = MapeamentoClasseMonstroSummon(dto,entidade);
+                        break;
+                    case  MonsterCardClassEnum.Link:
+                        var entidade = Mapper.Map<LinkMonster>(dto);
+                        cardTypeOperation = MapeamentoClasseMonstroSummon(dto,entidade);
+                        break;
+                    case  MonsterCardClassEnum.Synchro:
+                        var entidade = Mapper.Map<SynchroMonster>(dto);
+                        cardTypeOperation = MapeamentoClasseMonstroSummon(dto,entidade);
+                        break;
+                    case  MonsterCardClassEnum.Xyz:
+                        var entidade = Mapper.Map<XyzMonster>(dto);
+                        cardTypeOperation = MapeamentoClasseMonstroSummon(dto,entidade);
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+                var evento = Mapper.Map<Card>(dto);
+                var result =  await _service.Incluir(evento);
+
+                var resultDto = new SingleResultDto<EntityDto>(result);
+                resultDto.SetData(result, Mapper);
+                return resultDto;
             }
 
-
-            var TipoCarta = cardTypeOperation switch
+            async Task<ISingleResultDto<EntityDto>> MapeamentoClasseMonstroSummon(CompleteCardInformationDto dto,Entity entidade )
             {
-                1 => "Case 1",
-                2 => "Case 2",
-                3 => "Case 3",
-                _ => throw new NotImplementedException(),
-            };
+                var evento = Mapper.Map<entidade>(dto);
+                var result =  await _service.Incluir(evento);
 
-            var MonsterClassOperation = 0;
-            if (dto.MonsterCardClass == MonsterCardClassEnum.Fusion)
-            {
-                MonsterClassOperation = 1;
+                var resultDto = new SingleResultDto<EntityDto>(result);
+                resultDto.SetData(result, Mapper);
+                return resultDto;
             }
-            if (dto.MonsterCardClass == MonsterCardClassEnum.Link)
-            {
-                MonsterClassOperation = 2;              }
-            if (dto.MonsterCardClass == MonsterCardClassEnum.Synchro)
-            {
-                MonsterClassOperation = 3;
-            }
-            if (dto.MonsterCardClass == MonsterCardClassEnum.Xyz)
-            {
-                MonsterClassOperation = 4;
-            }
-              
-              
-            var ClasseDoMonstro = MonsterClassOperation switch
-            {
-                1 => "Case 1",
-                2 => "Case 2",
-                3 => "Case 3",
-                4 => "Case 4",
-                _ => throw new NotImplementedException(),
-            };
 
-            //  Console.WriteLine(teste);
-          
-            var evento = Mapper.Map<Card>(dto);
-            var result =  await _service.Incluir(evento);
-
-            var resultDto = new SingleResultDto<EntityDto>(result);
-            resultDto.SetData(result, Mapper);
-
-            return resultDto;
+            return await cardTypeOperation;
         }
         
 
