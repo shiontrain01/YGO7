@@ -21,13 +21,13 @@ namespace YGO7.WebApi.Controllers
         }
 
         [HttpGet]
-        public Task<IListResultDto<EffectMonsterDto>> GetAll()
+        public Task<IListResultDto<CompleteCardInformationDto>> GetAll()
         {
             return _cardService.GetAll();
         }
 
         [HttpGet("{id:length(24)}", Name = "Get")]
-        public Task<ISingleResultDto<EffectMonsterDto>> Get(string id)
+        public Task<ISingleResultDto<CompleteCardInformationDto>> Get(string id)
         {
             var card = _cardService.Get(id);
 
@@ -35,7 +35,7 @@ namespace YGO7.WebApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Card> Create(EffectMonsterDto card)
+        public ActionResult<Card> Create(CompleteCardInformationDto card)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace YGO7.WebApi.Controllers
         }
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, EffectMonsterDto cardIn)
+        public IActionResult Update(string id, CompleteCardInformationDto cardIn)
         {
             var card = _cardService.Get(id);
 

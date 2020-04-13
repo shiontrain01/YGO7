@@ -7,9 +7,6 @@ namespace YGO7.Domain.Models
         [BsonElement("SynchroSummonRequirement")]
         public string SynchroSummonRequirement { get; set; }
 
-        [BsonElement("SynchroStars")]
-        public short SynchroStars { get; set; }
-        
         [BsonElement("TunersNeededMin")]
         public short TunersNeededMin { get; set; }
         

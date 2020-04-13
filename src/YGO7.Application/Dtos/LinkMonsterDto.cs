@@ -16,7 +16,7 @@ namespace YGO7.Application.Dtos
         
         public short CardEffectSpeed { get; set; }
         
-        public Boolean HaveEffect { get; set; }
+        public bool HaveEffect { get; set; }
         
         public ElementEnum CardElement { get; set; }
         
@@ -36,20 +36,20 @@ namespace YGO7.Application.Dtos
         
         public short MonstersNeededMax { get; set; }
         
-        public Boolean ArrowSuperiorEsquerdo { get; set; }
+        public bool ArrowSuperiorEsquerdo { get; set; }
         
-        public Boolean ArrowSuperiorCentro { get; set; }
+        public bool ArrowSuperiorCentro { get; set; }
         
-        public Boolean ArrowSuperiorDireito { get; set; }
+        public bool ArrowSuperiorDireito { get; set; }
         
-        public Boolean ArrowCentralEsquerdo { get; set; }
+        public bool ArrowCentralEsquerdo { get; set; }
         
-        public Boolean ArrowCentralDireito { get; set; }
+        public bool ArrowCentralDireito { get; set; }
         
-        public Boolean ArrowInferiorEsquerdo { get; set; }
+        public bool ArrowInferiorEsquerdo { get; set; }
         
-        public Boolean ArrowInferiorCentral { get; set; }
+        public bool ArrowInferiorCentral { get; set; }
         
-        public Boolean ArrowInferiorDireito { get; set; }
+        public bool ArrowInferiorDireito { get; set; }
     }
 }

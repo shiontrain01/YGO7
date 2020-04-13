@@ -25,7 +25,7 @@ namespace YGO7.Domain.Models
         public short CardEffectSpeed { get; set; }
         
         [BsonElement("HaveEffect")]
-        public Boolean HaveEffect { get; set; }
+        public bool HaveEffect { get; set; }
         
         [BsonElement("CardElement")]
         public ElementEnum CardElement { get; set; }

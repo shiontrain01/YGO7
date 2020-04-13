@@ -16,7 +16,7 @@ namespace YGO7.Application.Dtos
         
         public short CardEffectSpeed { get; set; }
         
-        public Boolean HaveEffect { get; set; }
+        public bool HaveEffect { get; set; }
         
         public ElementEnum CardElement { get; set; }
         

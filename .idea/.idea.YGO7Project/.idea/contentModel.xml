@@ -30,7 +30,7 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Dtos" t="Include">
-          <e p="EffectMonsterDto.cs" t="Include" />
+          <e p="CompleteCardInformationDto.cs" t="Include" />
           <e p="FusionMonsterDto.cs" t="Include" />
           <e p="LinkMonsterDto.cs" t="Include" />
           <e p="PendulumMonsterDto.cs" t="Include" />

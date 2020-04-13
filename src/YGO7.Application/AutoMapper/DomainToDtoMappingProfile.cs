@@ -13,8 +13,8 @@ namespace YGO7.Application.AutoMapper
             CreateMap<Entity, EntityDto>();
             
             
-            CreateMap<Card, EffectMonsterDto>();
-            CreateMap<Monster, EffectMonsterDto>();
+            CreateMap<Card, CompleteCardInformationDto>();
+            CreateMap<Monster, CompleteCardInformationDto>();
             CreateMap<FusionMonster, FusionMonsterDto>();
             CreateMap<LinkMonster, LinkMonsterDto>();
             CreateMap<PendulumMonster, PendulumMonsterDto>();
