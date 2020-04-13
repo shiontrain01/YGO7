@@ -20,13 +20,15 @@ namespace YGO7.WebApi.Controllers
         }
 
         [HttpGet]
-        public Task<IListResultDto<EffectMonsterDto>> ListGet() =>
-            _cardService.ListGet();
-
-        [HttpGet("{id:length(24)}", Name = "GetCard")]
-        public Task<ISingleResultDto<EffectMonsterDto>> GetCard(string id)
+        public Task<IListResultDto<EffectMonsterDto>> GetAll()
         {
-            var card = _cardService.GetCard(id);
+            return _cardService.GetAll();
+        }
+
+        [HttpGet("{id:length(24)}", Name = "Get")]
+        public Task<ISingleResultDto<EffectMonsterDto>> Get(string id)
+        {
+            var card = _cardService.Get(id);
 
             return card;
         }
@@ -36,13 +38,13 @@ namespace YGO7.WebApi.Controllers
         {
             _cardService.Create(card);
 
-            return CreatedAtRoute("GetCard", new { id = card.Id.ToString() }, card);
+            return CreatedAtRoute("Get", new { id = card.Id.ToString() }, card);
         }
 
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, EffectMonsterDto cardIn)
         {
-            var card = _cardService.GetCard(id);
+            var card = _cardService.Get(id);
 
             if (card == null)
             {
@@ -57,14 +59,14 @@ namespace YGO7.WebApi.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var card = _cardService.GetCard(id);
+            var card = _cardService.Get(id);
 
             if (card == null)
             {
                 return NotFound();
             }
 
-            _cardService.Delete(card.Id);
+            _cardService.Delete(id);
 
             return NoContent();
         }

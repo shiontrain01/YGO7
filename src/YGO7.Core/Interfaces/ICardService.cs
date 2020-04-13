@@ -6,14 +6,14 @@ namespace YGO7.Core.Interfaces
 {
     public interface ICardService
     {
-        Task<ISingleResult<Card>> ListGet();
+        Task<IListResult<Card>> GetAll();
 
-        Task<ISingleResult<Card>> GetCard(string id);
+        Task<ISingleResult<Card>> Get(string id);
 
-        Task<ISingleResult<Card>> Create(Card entity);
+        Task<ISingleResult<Card>> Incluir(Card entity);
 
-        Task<ISingleResult<Card>> Update(string id,Card entity);
+        Task<ISingleResult<Card>> Editar(string id,Card entity);
 
-        Task<ISingleResult<Card>> Remove(string id);
+        Task<ISingleResult<Card>> Excluir(string id);
     }
 }

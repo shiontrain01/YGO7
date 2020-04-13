@@ -6,10 +6,10 @@ namespace YGO7.Application.Interfaces
 {
     public interface ICardAppService : IAppService
     {
-        Task<IListResultDto<EffectMonsterDto>> ListGet();
-        Task<ISingleResultDto<EffectMonsterDto>> GetCard(string id);
+        Task<IListResultDto<EffectMonsterDto>> GetAll();
+        Task<ISingleResultDto<EffectMonsterDto>> Get(string id);
         Task<ISingleResultDto<EntityDto>> Create(EffectMonsterDto dto);
         Task<ISingleResultDto<EntityDto>> Update(string id,EffectMonsterDto dto);
-        Task<ISingleResultDto<EntityDto>> Delete(int id);
+        Task<ISingleResultDto<EntityDto>> Delete(string id);
     }
 }

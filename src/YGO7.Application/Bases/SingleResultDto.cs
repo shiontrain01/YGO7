@@ -5,6 +5,8 @@ using YGO7.Domain.Enums;
 using AutoMapper;
 using YGO7.Application.Interfaces;
 using System;
+using System.Threading.Tasks;
+using YGO7.Domain.Models;
 
 namespace YGO7.Application.Bases
 {

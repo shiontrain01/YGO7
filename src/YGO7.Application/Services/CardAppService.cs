@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MongoDB.Driver;
@@ -10,30 +11,32 @@ using YGO7.Domain.Models;
 
 namespace YGO7.Application.Services
 {
-    public class CardAppService: AppService, ICardService
+    public class CardAppService: AppService, ICardAppService
     {
         private readonly ICardService _service;
-        private readonly IMongoCollection<Card> _card;
-        
 
-        public CardAppService( ICardService _service, IMapper _mapper)
-            : base(_mapper)
+        public CardAppService( ICardService service, IMapper mapper)
+            : base(mapper)
         {
-            this._service = _service;
+            this._service = service;
         }
 
-        public async Task<IListResultDto<EffectMonsterDto>> Listar()
+        public async Task<IListResultDto<EffectMonsterDto>> GetAll()
         {
-            return new ListResultDto<EffectMonsterDto>(new List<EffectMonsterDto>());
-            
+
+            var listaAll = await _service.GetAll();
+
+            List<EffectMonsterDto> personViews =
+                Mapper.Map<List<Card>, List<EffectMonsterDto>>(listaAll.Data.ToList());
+
+            return new ListResultDto<EffectMonsterDto>(personViews);
         }
 
-       
-
-        public async Task<ISingleResultDto<EffectMonsterDto>> GetCard(string id)
+        public async Task<ISingleResultDto<EffectMonsterDto>> Get(string id)
         {
-            var entity = _card.Find<Card>(card => card.Id == id).FirstOrDefault();
-            return new SingleResultDto<EffectMonsterDto>(entity);
+            var entity = _service.Get(id);
+            var dto = Mapper.Map<EffectMonsterDto>(entity);
+            return new SingleResultDto<EffectMonsterDto>(dto);
 
         }
 
@@ -41,7 +44,7 @@ namespace YGO7.Application.Services
         {
             var evento = Mapper.Map<Card>(dto);
 
-            var result =  _service.Create(evento);
+            var result =  await _service.Incluir(evento);
 
             var resultDto = new SingleResultDto<EntityDto>(result);
             resultDto.SetData(result, Mapper);
@@ -49,11 +52,11 @@ namespace YGO7.Application.Services
             return resultDto;
         }
 
-        public async Task<ISingleResultDto<EntityDto>> Update(EffectMonsterDto dto)
+        public async Task<ISingleResultDto<EntityDto>> Update(string id, EffectMonsterDto dto)
         {
             var evento = Mapper.Map<Card>(dto);
 
-            var result = await _service.Update(evento);
+            var result = await _service.Editar(id, evento);
 
             var resultDto = new SingleResultDto<EntityDto>(result);
             resultDto.SetData(result, Mapper);
@@ -61,7 +64,7 @@ namespace YGO7.Application.Services
             return resultDto;
         }
 
-        public async Task<ISingleResultDto<EntityDto>> Excluir(int id)
+        public async Task<ISingleResultDto<EntityDto>> Delete(string id)
         {
             var result = await _service.Excluir(id);
 

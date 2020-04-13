@@ -83,8 +83,8 @@ namespace YGO7.WebApi
 
             // ASP.NET HttpContext dependency
             
-            /*services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<CardService>();*/
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSingleton<CardService>();
             
             
 

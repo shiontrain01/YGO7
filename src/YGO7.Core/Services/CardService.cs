@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using YGO7.Domain.Models;
 using MongoDB.Driver;
 using YGO7.Core.Interfaces;
+using YGO7.Core.Messages;
+using YGO7.Core.Models.Results;
 
 namespace YGO7.Core.Services
 {
@@ -18,27 +21,89 @@ namespace YGO7.Core.Services
 
             _cards = database.GetCollection<Card>(settings.CardsCollectionName);
         }
-        
 
-        public Task<ISingleResult<Card>> ListGet() =>
-            _cards.Find(card => true).ToList();
-
-        public Task<ISingleResult<Card>> GetCard(string id) =>
-            _cards.Find<Card>(card => card.Id == id).FirstOrDefault();
-
-        public Task<ISingleResult<Card>> Create(Card card)
+        public async Task<IListResult<Card>> GetAll()
         {
-            _cards.InsertOne(card);
-            return card;
+            var entity = new List<Card>();
+
+            try
+            {
+                entity = _cards.Find(card => true).ToList();
+                
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            return null;
         }
 
-        public Task<ISingleResult<Card>> Update(string id, Card cardIn) =>
-            _cards.ReplaceOne(card => card.Id == id, cardIn);
+        public async Task<ISingleResult<Card>> Get(string id)
+        {
+            var entity = new Card();
+            try
+            {
+                _cards.Find<Card>(card => card.Id == id).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
 
-        public void Remove(Card cardIn) =>
-            _cards.DeleteOne(card => card.Id == cardIn.Id);
+            return new InclusaoResult<Card>(entity);
+        }
 
-        public Task<ISingleResult<Card>> Remove(string id) =>
-           return new _cards.DeleteOne(card => card.Id == id);
+        public async Task<ISingleResult<Card>> Incluir(Card entity)
+        {
+
+            try
+            {
+                _cards.InsertOne(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
+
+        public async Task<ISingleResult<Card>> Editar(string id, Card entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+
+        public async Task<ISingleResult<Card>> Excluir(string id)
+        {
+            try
+            {
+                _cards.DeleteOne(card => card.Id == id);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new ExclusaoResult<Card>();
+        }
+
+        private void HydrateValues(Card target, Card source)
+        {
+            //target.Codigo = source.Codigo;
+            //target.QuantidadePassageiros = source.QuantidadePassageiros;
+            //target.Modelo = source.Modelo;
+        }
     }
 }

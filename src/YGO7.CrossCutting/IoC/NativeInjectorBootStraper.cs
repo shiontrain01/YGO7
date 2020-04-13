@@ -18,8 +18,8 @@ namespace YGO7.CrossCutting.IoC
             // AspNetUser
            services.AddScoped<IUser, AspNetUser>();
 
-           // Application - Services
-           services.AddScoped< ICardAppService, CardAppService>();
+            // Application - Services
+           services.AddScoped<ICardAppService, CardAppService>();
 
            // Core - Services
            services.AddScoped<ICardService, CardService>();
@@ -31,8 +31,5 @@ namespace YGO7.CrossCutting.IoC
           // services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         }
-        
-            
-            
-        }
+    }
 }
