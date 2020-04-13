@@ -55,6 +55,21 @@ namespace YGO7.Application.Services
 
         public async Task<ISingleResultDto<EntityDto>> Create(EffectMonsterDto dto)
         {
+
+            var operation = 2;//dto.enumqueeuquero;
+
+            var teste = operation switch
+            {
+                1 => "Case 1",
+                2 => "Case 2",
+                3 => "Case 3",
+                4 => "Case 4",
+                _ => throw new NotImplementedException(),
+            };
+
+            Console.WriteLine(teste);
+
+
             var evento = Mapper.Map<Card>(dto);
 
             var result =  await _service.Incluir(evento);
@@ -64,6 +79,7 @@ namespace YGO7.Application.Services
 
             return resultDto;
         }
+        
 
         public async Task<ISingleResultDto<EntityDto>> Update(string id, EffectMonsterDto dto)
         {
