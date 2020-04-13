@@ -11,6 +11,7 @@
         Gemini = 7,
         Ritual = 8,
         Tuner = 9,
-        Pendulum = 10
+        Pendulum = 10,
+        Toon = 11
     }
 }

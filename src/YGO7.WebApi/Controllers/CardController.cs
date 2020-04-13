@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using YGO7.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -36,9 +37,19 @@ namespace YGO7.WebApi.Controllers
         [HttpPost]
         public ActionResult<Card> Create(EffectMonsterDto card)
         {
-            _cardService.Create(card);
+            try
+            {
+                var teste = _cardService.Create(card);
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+                
+            }
             return CreatedAtRoute("Get", new { id = card.Id.ToString() }, card);
+
         }
 
         [HttpPut("{id:length(24)}")]

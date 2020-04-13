@@ -22,17 +22,17 @@ namespace YGO7.Application.Dtos
         
         public ElementEnum CardElement { get; set; }
         
-        public short CardAttack { get; set; }
-
-        public short CardDefense { get; set; }
-        
-        public short Stars { get; set; }
-        
-        public MonsterTypeEnum MonsterType { get; set; }
-        
-        public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
-        
-        public string MonsterSecondaryCardAbility { get; set; }
+        //public short CardAttack { get; set; }
+//
+        //public short CardDefense { get; set; }
+        //
+        //public short Stars { get; set; }
+        //
+        //public MonsterTypeEnum MonsterType { get; set; }
+        //
+        //public List<MonsterCardClassEnum> MonsterCardClass { get; set; }
+        //
+        //public string MonsterSecondaryCardAbility { get; set; }
 
     }
 }

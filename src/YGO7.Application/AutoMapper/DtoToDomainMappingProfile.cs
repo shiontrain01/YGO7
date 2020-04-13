@@ -9,6 +9,7 @@ namespace YGO7.Application.AutoMapper
     {
 		public DtoToDomainMappingProfile()
 		{
+			CreateMap<EffectMonsterDto, Card>();
 			CreateMap<EffectMonsterDto,Monster >();
 			CreateMap<FusionMonsterDto,FusionMonster >();
 			CreateMap<LinkMonsterDto,LinkMonster >();

@@ -60,13 +60,14 @@ namespace YGO7.Core.Services
             try
             {
                 _cards.InsertOne(entity);
+                return new InclusaoResult<Card>(entity);
             }
             catch (Exception)
             {
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+            
         }
 
         public async Task<ISingleResult<Card>> Editar(string id, Card entity)

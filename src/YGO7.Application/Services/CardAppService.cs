@@ -56,28 +56,36 @@ namespace YGO7.Application.Services
         public async Task<ISingleResultDto<EntityDto>> Create(EffectMonsterDto dto)
         {
 
-            var operation = 2;//dto.enumqueeuquero;
+          //  var operation = 2;//dto.enumqueeuquero;
+//
+          //  var teste = operation switch
+          //  {
+          //      1 => "Case 1",
+          //      2 => "Case 2",
+          //      3 => "Case 3",
+          //      4 => "Case 4",
+          //      _ => throw new NotImplementedException(),
+          //  };
+//
+          //  Console.WriteLine(teste);
 
-            var teste = operation switch
-            {
-                1 => "Case 1",
-                2 => "Case 2",
-                3 => "Case 3",
-                4 => "Case 4",
-                _ => throw new NotImplementedException(),
-            };
+          try
+          {
+              var evento = Mapper.Map<Card>(dto);
+              var result =  await _service.Incluir(evento);
 
-            Console.WriteLine(teste);
+              var resultDto = new SingleResultDto<EntityDto>(result);
+              resultDto.SetData(result, Mapper);
+
+              return resultDto;
+          }
+          catch (Exception e)
+          {
+              Console.WriteLine(e);
+              throw;
+          }
 
 
-            var evento = Mapper.Map<Card>(dto);
-
-            var result =  await _service.Incluir(evento);
-
-            var resultDto = new SingleResultDto<EntityDto>(result);
-            resultDto.SetData(result, Mapper);
-
-            return resultDto;
         }
         
 
