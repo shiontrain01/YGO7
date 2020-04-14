@@ -18,13 +18,11 @@ namespace YGO7.Application.Services
     public class CardAppService : AppService, ICardAppService
     {
         private readonly ICardService _service;
-        private readonly IBaseAutomacaoEntityService _baseService;
 
-        public CardAppService(ICardService service, IBaseAutomacaoEntityService baseService, IMapper mapper)
+        public CardAppService(ICardService service, IMapper mapper)
             : base(mapper)
         {
             this._service = service;
-            this._baseService = baseService;
         }
 
         public async Task<IListResultDto<CompleteCardInformationDto>> GetAll()
@@ -115,19 +113,19 @@ namespace YGO7.Application.Services
             switch (dto.MonsterCardClass)
             {
                 case MonsterCardClassEnum.Fusion:
-                    result = await _baseService.Incluir(Mapper.Map<FusionMonster>(dto));
+                    result = await _service.Incluir(Mapper.Map<FusionMonster>(dto));
                     break;
                 case MonsterCardClassEnum.Link:
-                    result = await _baseService.Incluir(Mapper.Map<LinkMonster>(dto));
+                    result = await _service.Incluir(Mapper.Map<LinkMonster>(dto));
                     break;
                 case MonsterCardClassEnum.Synchro:
-                    result = await _baseService.Incluir(Mapper.Map<SynchroMonster>(dto));
+                    result = await _service.Incluir(Mapper.Map<SynchroMonster>(dto));
                     break;
                 case MonsterCardClassEnum.Xyz:
-                    result = await _baseService.Incluir(Mapper.Map<XyzMonster>(dto));
+                    result = await _service.Incluir(Mapper.Map<XyzMonster>(dto));
                     break;
                 default:
-                    result = await _baseService.Incluir(Mapper.Map<Card>(dto));
+                    result = await _service.Incluir(Mapper.Map<Card>(dto));
                     break;
             }
 

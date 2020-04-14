@@ -54,20 +54,74 @@ namespace YGO7.Core.Services
             return new InclusaoResult<Card>(entity);
         }
 
-        public async Task<ISingleResult<Card>> Incluir(Card entity)
+        public async Task<ISingleResult<Card>> Incluir(FusionMonster entity)
         {
-
             try
             {
-                _cards.InsertOne(entity);
-                return new InclusaoResult<Card>(entity);
+                await _cards.InsertOneAsync(entity);
             }
             catch (Exception)
             {
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            
+            return new InclusaoResult<Card>(entity);
+        }
+
+        public async Task<ISingleResult<Card>> Incluir(LinkMonster entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
+
+        public async Task<ISingleResult<Card>> Incluir(SynchroMonster entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
+
+        public async Task<ISingleResult<Card>> Incluir(XyzMonster entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
+
+        public async Task<ISingleResult<Card>> Incluir(Card entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
         }
 
         public async Task<ISingleResult<Card>> Editar(string id, Card entity)
