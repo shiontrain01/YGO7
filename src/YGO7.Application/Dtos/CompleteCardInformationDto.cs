@@ -54,8 +54,6 @@ namespace YGO7.Application.Dtos
         public short MaterialsNeededMax { get; set; }
         
         public string SynchroSummonRequirement { get; set; }
-
-        public short SynchroStars { get; set; }
         
         public short TunersNeededMin { get; set; }
         
