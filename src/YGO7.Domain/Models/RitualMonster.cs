@@ -1,4 +1,6 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
+using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Models
 {
@@ -10,5 +12,9 @@ namespace YGO7.Domain.Models
         
         [BsonElement("RitualLevelMin")]
         public short RitualLevelMin { get; set; }
+        
+        [BsonElement("MonsterNeededRitual")]
+        public List<string> MonsterNeededRitual { get; set; }
+
     }
 }

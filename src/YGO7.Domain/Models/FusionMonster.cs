@@ -9,11 +9,8 @@ namespace YGO7.Domain.Models
         [BsonElement("FusionSummonRequirement")]
         public string FusionSummonRequirement { get; set; }
 
-        [BsonElement("Stars")]
-        public short Stars { get; set; }
-        
         [BsonElement("MonsterNeededFusion")]
-        public List<String> MonsterNeededFusion { get; set; }
+        public List<string> MonsterNeededFusion { get; set; }
         
 
     }

@@ -10,8 +10,6 @@ namespace YGO7.Application.Dtos
         public string MonsterSecondaryCardAbility { get; set; }
         
         public short PendulumScale { get; set; }
-
-        public short Stars { get; set; }
         
         public string PendulumEffect { get; set; }
     }

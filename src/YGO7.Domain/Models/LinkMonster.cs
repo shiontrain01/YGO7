@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Models
@@ -8,6 +9,9 @@ namespace YGO7.Domain.Models
         [BsonElement("LinkSummonRequirement")]
         public string LinkSummonRequirement { get; set; }
 
+        [BsonElement("MonstersNeededLink")]
+        public List<string> MonstersNeededLink { get; set; }
+        
         [BsonElement("LinkGrade")]
         public short LinkGrade { get; set; }
 

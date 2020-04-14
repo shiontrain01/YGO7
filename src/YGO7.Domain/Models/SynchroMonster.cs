@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace YGO7.Domain.Models
 {
@@ -7,6 +8,12 @@ namespace YGO7.Domain.Models
         [BsonElement("SynchroSummonRequirement")]
         public string SynchroSummonRequirement { get; set; }
 
+        [BsonElement("TunersMonstersNeeded")]
+        public List<string> TunersMonstersNeeded { get; set; }
+        
+        [BsonElement("MonstersNeededSynchro")]
+        public List<string> MonstersNeededSynchro { get; set; }
+        
         [BsonElement("TunersNeededMin")]
         public short TunersNeededMin { get; set; }
         
