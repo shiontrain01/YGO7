@@ -58,14 +58,6 @@ namespace YGO7.Application.Services
 
         public async Task<ISingleResultDto<EntityDto>> Create(CompleteCardInformationDto dto)
         {
-
-            // nao consigo mudar o dto de entra 
-            // p dtp de emtodade é generico
-            // entao posso mudar a entidade 
-            //priceso saber um dado que diferete as cartas 
-            // saber um dado q difere os tipos de monstros 
-
-            ;
             var cardTypeOperation = dto.CardType switch
             {
                 CardTypeEnum.Monster => MapeamentoClasseMonstro(dto),
@@ -73,15 +65,6 @@ namespace YGO7.Application.Services
                 CardTypeEnum.Trap => MapeamentoTipoCartaTrap(dto),
                 _ => throw new NotImplementedException()
             };
-            
-
-            // eu quero fazer com que o swtich case me de o tipo do monstro
-            // tendo o tipo do monstro passado como parametro no switch case
-            // eu quero que ele seja a chamada da função do mapeamento de mosntro
-            // assim so vou ter uma função de mapeamento pra cada classe
-
-
-            //var teste = MapeamentoClasseMonstro(dto);
 
             return await cardTypeOperation;
         }
