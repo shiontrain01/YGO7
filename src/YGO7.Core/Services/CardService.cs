@@ -45,13 +45,14 @@ namespace YGO7.Core.Services
             try
             {
                 _cards.Find<Card>(card => card.Id == id).FirstOrDefault();
+                return new InclusaoResult<Card>(entity);
             }
             catch (Exception)
             {
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+       
         }
 
         public async Task<ISingleResult<Card>> Incluir(FusionMonster entity)
@@ -123,6 +124,34 @@ namespace YGO7.Core.Services
 
             return new InclusaoResult<Card>(entity);
         }
+        
+        public async Task<ISingleResult<Card>> Incluir(SpellCard entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
+        
+        public async Task<ISingleResult<Card>> Incluir(TrapCard entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            return new InclusaoResult<Card>(entity);
+        }
 
         public async Task<ISingleResult<Card>> Editar(string id, Card entity)
         {
@@ -139,7 +168,119 @@ namespace YGO7.Core.Services
 
             return new EdicaoResult<Card>();
         }
+        /*
+        public async Task<ISingleResult<Card>> Editar(string id, Monster entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
 
+            return new EdicaoResult<Card>();
+        }
+
+        public async Task<ISingleResult<Card>> Editar(string id, FusionMonster entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        
+        public async Task<ISingleResult<Card>> Editar(string id, SynchroMonster entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        
+        public async Task<ISingleResult<Card>> Editar(string id, XyzMonster entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        
+        public async Task<ISingleResult<Card>> Editar(string id, LinkMonster entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        
+        public async Task<ISingleResult<Card>> Editar(string id, SpellCard entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        
+        public async Task<ISingleResult<Card>> Editar(string id, TrapCard entity)
+        {
+            try
+            {
+                var obj = new Card();
+                HydrateValues(obj, entity);
+                _cards.ReplaceOne(card => card.Id == id, entity);
+            }
+            catch (Exception ex)
+            {
+                return new SingleResult<Card>(ex);
+            }
+
+            return new EdicaoResult<Card>();
+        }
+        */
         public async Task<ISingleResult<Card>> Excluir(string id)
         {
             try

@@ -20,9 +20,11 @@ namespace YGO7.CrossCutting.IoC
 
             // Application - Services
            services.AddScoped<ICardAppService, CardAppService>();
+           services.AddScoped<IGetCardAppService, GetCardAppService>();
 
            // Core - Services
            services.AddScoped<ICardService, CardService>();
+           services.AddScoped<IGetCardService, GetCardService>();
 
            // Core - Validations
           // services.AddScoped<IAirplaneValidation, AirplaneValidation>(); aqui vai ficar minhas regras de negocio

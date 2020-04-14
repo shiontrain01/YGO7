@@ -9,6 +9,7 @@ namespace YGO7.Application.AutoMapper
     {
 		public DtoToDomainMappingProfile()
 		{
+			CreateMap<CompleteCardInformationDto, CompleteCardInformation>();
 			CreateMap<CompleteCardInformationDto, Card>();
 			CreateMap<CompleteCardInformationDto,Monster >();
 			CreateMap<CompleteCardInformationDto,FusionMonster >();

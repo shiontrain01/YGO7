@@ -47,6 +47,7 @@
           <e p="IAppService.cs" t="Include" />
           <e p="ICardAppService.cs" t="Include" />
           <e p="IEntityDto.cs" t="Include" />
+          <e p="IGetCardAppService.cs" t="Include" />
           <e p="IListResultDto.cs" t="Include" />
           <e p="IResultDto.cs" t="Include" />
           <e p="ISingleResultDto.cs" t="Include" />
@@ -64,6 +65,7 @@
         </e>
         <e p="Services" t="Include">
           <e p="CardAppService.cs" t="Include" />
+          <e p="GetCardAppService.cs" t="Include" />
         </e>
         <e p="Validations" t="Include" />
         <e p="YGO7.Application.csproj" t="IncludeRecursive" />
@@ -79,6 +81,7 @@
         <e p="Interfaces" t="Include">
           <e p="ICardService.cs" t="Include" />
           <e p="IEntityValidation.cs" t="Include" />
+          <e p="IGetCardService.cs" t="Include" />
           <e p="IListResult.cs" t="Include" />
           <e p="ILookupDto.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
@@ -117,6 +120,7 @@
         <e p="Repositories" t="Include" />
         <e p="Services" t="Include">
           <e p="CardService.cs" t="Include" />
+          <e p="GetCardService.cs" t="Include" />
         </e>
         <e p="YGO7.Core.csproj" t="IncludeRecursive" />
       </e>
@@ -175,6 +179,7 @@
         <e p="Models" t="Include">
           <e p="Card.cs" t="Include" />
           <e p="CardDatabaseSettings.cs" t="Include" />
+          <e p="CompleteCardInformation.cs" t="Include" />
           <e p="FusionMonster.cs" t="Include" />
           <e p="LinkMonster.cs" t="Include" />
           <e p="Monster.cs" t="Include" />
@@ -207,6 +212,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="CardController.cs" t="Include" />
+          <e p="GetCardController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

@@ -14,6 +14,7 @@ namespace YGO7.Application.AutoMapper
             
             
             CreateMap<Card, CompleteCardInformationDto>();
+            CreateMap<CompleteCardInformation, CompleteCardInformationDto>();
             CreateMap<Monster, CompleteCardInformationDto>();
             CreateMap<FusionMonster, CompleteCardInformationDto>();
             CreateMap<LinkMonster, CompleteCardInformationDto>();

@@ -125,6 +125,7 @@ namespace YGO7.Application.Services
 
         public async Task<ISingleResultDto<EntityDto>> Update(string id, CompleteCardInformationDto dto)
         {
+
             var evento = Mapper.Map<Card>(dto);
 
             var result = await _service.Editar(id, evento);
