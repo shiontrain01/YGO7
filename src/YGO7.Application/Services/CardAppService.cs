@@ -60,13 +60,13 @@ namespace YGO7.Application.Services
         {
             var cardTypeOperation = dto.CardType switch
             {
-                CardTypeEnum.Monster => MapeamentoClasseMonstro(dto),
-                CardTypeEnum.Spell => MapeamentoTipoCartaSpell(dto),
-                CardTypeEnum.Trap => MapeamentoTipoCartaTrap(dto),
+                CardTypeEnum.Monster => await MapeamentoClasseMonstro(dto),
+                CardTypeEnum.Spell => await MapeamentoTipoCartaSpell(dto),
+                CardTypeEnum.Trap => await MapeamentoTipoCartaTrap(dto),
                 _ => throw new NotImplementedException()
             };
 
-            return await cardTypeOperation;
+            return cardTypeOperation;
         }
 
         private async Task<ISingleResultDto<EntityDto>> MapeamentoTipoCartaSpell(CompleteCardInformationDto dto)

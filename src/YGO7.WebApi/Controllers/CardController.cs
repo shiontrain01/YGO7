@@ -21,39 +21,37 @@ namespace YGO7.WebApi.Controllers
         }
 
         [HttpGet]
-        public Task<IListResultDto<CompleteCardInformationDto>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return _cardService.GetAll();
+            var card = await _cardService.GetAll();
+            return Ok(card);
         }
 
         [HttpGet("{id:length(24)}", Name = "Get")]
-        public Task<ISingleResultDto<CompleteCardInformationDto>> Get(string id)
+        public async Task<IActionResult> Get(string id)
         {
-            var card = _cardService.Get(id);
-
-            return card;
+            var card = await _cardService.Get(id);
+            return Ok(card);
         }
 
         [HttpPost]
-        public ActionResult<Card> Create(CompleteCardInformationDto card)
+        public async Task<IActionResult> Create(CompleteCardInformationDto card)
         {
             try
             {
-                var teste = _cardService.Create(card);
-
+                card.Id = "";
+                var teste = await _cardService.Create(card);
+                return Ok(teste);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
-                
             }
-            return CreatedAtRoute("Get", new { id = card.Id.ToString() }, card);
-
         }
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, CompleteCardInformationDto cardIn)
+        public async Task<IActionResult> Update(string id, CompleteCardInformationDto cardIn)
         {
             var card = _cardService.Get(id);
 
@@ -62,9 +60,9 @@ namespace YGO7.WebApi.Controllers
                 return NotFound();
             }
 
-            _cardService.Update(id, cardIn);
+            var teste = await _cardService.Update(id, cardIn);
 
-            return NoContent();
+            return Ok(teste);
         }
 
         [HttpDelete("{id:length(24)}")]
