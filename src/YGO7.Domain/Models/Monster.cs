@@ -24,11 +24,20 @@ namespace YGO7.Domain.Models
         [BsonElement("Stars")]
         public short Stars { get; set; }
         
-        [BsonElement("PendulumMonster")]
-        public PendulumMonster  PendulumMonster { get; set; }
+        [BsonElement("PendulumScale")]
+        public short PendulumScale { get; set; }
         
-        [BsonElement("RitualMonster")]
-        public RitualMonster  RitualMonster { get; set; }
+        [BsonElement("PendulumEffect")]
+        public string PendulumEffect { get; set; }
+        
+        [BsonElement("RitualSummonRequirement")]
+        public string RitualSummonRequirement { get; set; }
+        
+        [BsonElement("RitualLevelMin")]
+        public short RitualLevelMin { get; set; }
+        
+        [BsonElement("MonsterNeededRitual")]
+        public List<string> MonsterNeededRitual { get; set; }
         
         [BsonElement("TunerMonster")]
         public bool  TunerMonster { get; set; }

@@ -44,8 +44,8 @@ namespace YGO7.Application.Services
         {
             var entity = await _service.GetById(id);
             try
-            {
-                var dto =  Mapper.Map<CompleteCardInformationDto>(entity);
+            { 
+                CompleteCardInformationDto dto =  Mapper.Map<CompleteCardInformation, CompleteCardInformationDto>(entity.Data);
                 return  new SingleResultDto<CompleteCardInformationDto>(dto);
             }
             catch (Exception e)

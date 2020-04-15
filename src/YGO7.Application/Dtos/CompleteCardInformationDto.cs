@@ -6,7 +6,7 @@ namespace YGO7.Application.Dtos
 {
     public class CompleteCardInformationDto : EntityDto
     {
-      //Campos referentes a Card
+        //Campos referentes a Card
         public string CardId { get; set; }
         
         public string CardName { get; set; }
@@ -35,9 +35,15 @@ namespace YGO7.Application.Dtos
         
         public short Stars { get; set; }
         
-        //public PendulumMonsterDto  PendulumMonster { get; set; }
-        //
-        //public RitualMonsterDto  RitualMonster { get; set; }
+        public short PendulumScale { get; set; }
+        
+        public string PendulumEffect { get; set; }
+        
+        public string RitualSummonRequirement { get; set; }
+        
+        public short RitualLevelMin { get; set; }
+        
+        public List<string> MonsterNeededRitual { get; set; }
         
         public bool  TunerMonster { get; set; }
         

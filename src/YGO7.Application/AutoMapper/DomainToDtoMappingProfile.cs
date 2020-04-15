@@ -18,16 +18,12 @@ namespace YGO7.Application.AutoMapper
             CreateMap<Monster, CompleteCardInformationDto>();
             CreateMap<FusionMonster, CompleteCardInformationDto>();
             CreateMap<LinkMonster, CompleteCardInformationDto>();
-            CreateMap<PendulumMonster, CompleteCardInformationDto>();
-            CreateMap<RitualMonster, CompleteCardInformationDto>();
             CreateMap<XyzMonster, CompleteCardInformationDto>();
             CreateMap<SynchroMonster, CompleteCardInformationDto>();
             CreateMap<TrapCard, CompleteCardInformationDto>();
             CreateMap<SpellCard, CompleteCardInformationDto>();
             CreateMap<FusionMonster, FusionMonsterDto>();
             CreateMap<LinkMonster, LinkMonsterDto>();
-            CreateMap<PendulumMonster, PendulumMonsterDto>();
-            CreateMap<RitualMonster, RitualMonsterDto>();
             CreateMap<XyzMonster, XyzMonsterDto>();
             CreateMap<SynchroMonster, SynchroMonsterDto>();
             CreateMap<TrapCard, TrapCardDto>();

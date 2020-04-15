@@ -33,8 +33,6 @@
           <e p="CompleteCardInformationDto.cs" t="Include" />
           <e p="FusionMonsterDto.cs" t="Include" />
           <e p="LinkMonsterDto.cs" t="Include" />
-          <e p="PendulumMonsterDto.cs" t="Include" />
-          <e p="RitualMonsterDto.cs" t="Include" />
           <e p="SpellCardDto.cs" t="Include" />
           <e p="SynchroMonsterDto.cs" t="Include" />
           <e p="TrapCardDto.cs" t="Include" />
@@ -183,9 +181,6 @@
           <e p="FusionMonster.cs" t="Include" />
           <e p="LinkMonster.cs" t="Include" />
           <e p="Monster.cs" t="Include" />
-          <e p="MonsterSecondaryEffect.cs" t="Include" />
-          <e p="PendulumMonster.cs" t="Include" />
-          <e p="RitualMonster.cs" t="Include" />
           <e p="SpellCard.cs" t="Include" />
           <e p="SynchroMonster.cs" t="Include" />
           <e p="TrapCard.cs" t="Include" />

@@ -23,7 +23,7 @@ namespace YGO7.Core.Services
         
         public async Task<IListResult<CompleteCardInformation>> GetAllCards()
         {
-            var entity = new List<CompleteCardInformation>();
+            var entity = new  List<CompleteCardInformation>();
 
             try
             {

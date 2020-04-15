@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YGO7.Application.Dtos;
 using YGO7.Application.Interfaces;
@@ -19,18 +20,28 @@ namespace YGO7.WebApi.Controllers
 
         
         [HttpGet]
-        public Task<IListResultDto<CompleteCardInformationDto>> GetAllCards()
+        public async Task<IListResultDto<CompleteCardInformationDto>> GetAllCards()
         {
-            return _getCardService.GetAllCards();
+            return await _getCardService.GetAllCards();
         }
 
 
         [HttpGet("{id:length(24)}", Name = "GetById")]
-        public Task<ISingleResultDto<CompleteCardInformationDto>> GetById(string id)
+        public async Task<IActionResult>  GetById(string id)
         {
-            var card = _getCardService.GetById(id);
+            try
+            {
+                var card = await _getCardService.GetById(id);
+                return Ok(card);
 
-            return card;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
         

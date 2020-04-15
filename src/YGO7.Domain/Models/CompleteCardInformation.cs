@@ -13,22 +13,22 @@ namespace YGO7.Domain.Models
         public string? CardId { get; set; }
         
         [BsonElement("CardName")]
-        public string CardName { get; set; }
+        public string? CardName { get; set; }
         
         [BsonElement("CardAbility")]
         public string? CardAbility { get; set; }
         
         [BsonElement("CardType")]
-        public CardTypeEnum CardType { get; set; }
+        public CardTypeEnum? CardType { get; set; }
         
         [BsonElement("CardEffectSpeed")]
         public short? CardEffectSpeed { get; set; }
         
         [BsonElement("HaveEffect")]
-        public bool HaveEffect { get; set; }
+        public bool? HaveEffect { get; set; }
         
         [BsonElement("CardElement")]
-        public ElementEnum CardElement { get; set; }
+        public ElementEnum? CardElement { get; set; }
         
         //informacoes de spell
         
@@ -60,11 +60,20 @@ namespace YGO7.Domain.Models
         [BsonElement("Stars")]
         public short? Stars { get; set; }
         
-        //[BsonElement("PendulumMonster")]
-        //public PendulumMonster?  PendulumMonster { get; set; }
-        //
-        //[BsonElement("RitualMonster")]
-        //public RitualMonster?  RitualMonster { get; set; }
+        [BsonElement("PendulumScale")]
+        public short PendulumScale { get; set; }
+        
+        [BsonElement("PendulumEffect")]
+        public string PendulumEffect { get; set; }
+        
+        [BsonElement("RitualSummonRequirement")]
+        public string RitualSummonRequirement { get; set; }
+        
+        [BsonElement("RitualLevelMin")]
+        public short RitualLevelMin { get; set; }
+        
+        [BsonElement("MonsterNeededRitual")]
+        public List<string> MonsterNeededRitual { get; set; }
         
         [BsonElement("TunerMonster")]
         public bool?  TunerMonster { get; set; }
