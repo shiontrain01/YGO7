@@ -17,6 +17,12 @@ namespace YGO7.WebApi.Controllers
             _getCardService = getCardAppService;
         }
 
+        
+        [HttpGet]
+        public Task<IListResultDto<CompleteCardInformationDto>> GetAllCards()
+        {
+            return _getCardService.GetAllCards();
+        }
 
 
         [HttpGet("{id:length(24)}", Name = "GetById")]

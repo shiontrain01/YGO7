@@ -60,11 +60,11 @@ namespace YGO7.Domain.Models
         [BsonElement("Stars")]
         public short? Stars { get; set; }
         
-        [BsonElement("PendulumMonster")]
-        public PendulumMonster?  PendulumMonster { get; set; }
-        
-        [BsonElement("RitualMonster")]
-        public RitualMonster?  RitualMonster { get; set; }
+        //[BsonElement("PendulumMonster")]
+        //public PendulumMonster?  PendulumMonster { get; set; }
+        //
+        //[BsonElement("RitualMonster")]
+        //public RitualMonster?  RitualMonster { get; set; }
         
         [BsonElement("TunerMonster")]
         public bool?  TunerMonster { get; set; }

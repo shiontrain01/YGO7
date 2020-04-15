@@ -6,6 +6,8 @@ namespace YGO7.Core.Interfaces
     public interface IGetCardService
     {
         Task<ISingleResult<CompleteCardInformation>> GetById(string id);
+        Task<IListResult<CompleteCardInformation>> GetAllCards();
+
 
     }
 }

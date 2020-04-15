@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using YGO7.Application.Bases;
 using YGO7.Application.Dtos;
 using YGO7.Application.Interfaces;
 using YGO7.Core.Interfaces;
+using YGO7.Domain.Models;
 
 namespace YGO7.Application.Services
 {
@@ -17,6 +20,25 @@ namespace YGO7.Application.Services
         {
             this._service = service;
         }
+
+        public async Task<IListResultDto<CompleteCardInformationDto>> GetAllCards()
+        {
+            var listaAll = await _service.GetAllCards();
+
+            try
+            {
+                List<CompleteCardInformationDto> personViews =
+                    Mapper.Map<List<CompleteCardInformation>, List<CompleteCardInformationDto>>(listaAll.Data.ToList());
+
+                return new ListResultDto<CompleteCardInformationDto>(personViews);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
 
         public async Task<ISingleResultDto<CompleteCardInformationDto>> GetById(string id)
         {

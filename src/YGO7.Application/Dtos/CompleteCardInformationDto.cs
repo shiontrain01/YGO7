@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using YGO7.Application.Bases;
 using YGO7.Domain.Enums;
 
@@ -36,9 +35,9 @@ namespace YGO7.Application.Dtos
         
         public short Stars { get; set; }
         
-        public PendulumMonsterDto  PendulumMonster { get; set; }
-        
-        public RitualMonsterDto  RitualMonster { get; set; }
+        //public PendulumMonsterDto  PendulumMonster { get; set; }
+        //
+        //public RitualMonsterDto  RitualMonster { get; set; }
         
         public bool  TunerMonster { get; set; }
         
