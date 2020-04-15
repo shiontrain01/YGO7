@@ -67,8 +67,8 @@ namespace YGO7.Core.Services
             }
 
             Card teste = entity;
-            
-            return new InclusaoResult< Card>(new Card());
+
+            return new InclusaoResult<Card>(teste);
         }
 
         public async Task<ISingleResult<Card>> Incluir(LinkMonster entity)

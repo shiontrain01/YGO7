@@ -40,9 +40,8 @@ namespace YGO7.Core.Services
 
         public async Task<ISingleResult<CompleteCardInformation>> GetById(string id)
         {
-            var entity = new CompleteCardInformation();
-            entity = _cards.Find<CompleteCardInformation>(card => card.Id == id).FirstOrDefault();
-            return new InclusaoResult<CompleteCardInformation>(entity);
+            var entity = await _cards.FindAsync(card => card.Id == id);
+            return new InclusaoResult<CompleteCardInformation>(entity.FirstOrDefault());
         }
     }
 }
