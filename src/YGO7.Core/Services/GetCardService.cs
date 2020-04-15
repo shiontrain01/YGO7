@@ -6,7 +6,7 @@ using YGO7.Domain.Models;
 
 namespace YGO7.Core.Services
 {
-    public class GetCardService: IGetCardService
+    public class GetCardService : IGetCardService
     {
         private readonly IMongoCollection<CompleteCardInformation> _cards;
 
@@ -19,10 +19,10 @@ namespace YGO7.Core.Services
         }
 
         public async Task<ISingleResult<CompleteCardInformation>> GetById(string id)
-    {
-        var entity = new CompleteCardInformation();
-        _cards.Find<CompleteCardInformation>(card => card.Id == id).FirstOrDefault();
-        return new InclusaoResult<CompleteCardInformation>(entity);
-    }
+        {
+            var entity = new CompleteCardInformation();
+            entity = _cards.Find<CompleteCardInformation>(card => card.Id == id).FirstOrDefault();
+            return new InclusaoResult<CompleteCardInformation>(entity);
+        }
     }
 }
