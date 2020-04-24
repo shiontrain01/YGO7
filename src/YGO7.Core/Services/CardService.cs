@@ -82,7 +82,8 @@ namespace YGO7.Core.Services
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+            Card teste = entity;
+            return new InclusaoResult<Card>(teste);
         }
 
         public async Task<ISingleResult<Card>> Incluir(SynchroMonster entity)
@@ -96,7 +97,8 @@ namespace YGO7.Core.Services
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+            Card teste = entity;
+            return new InclusaoResult<Card>(teste);
         }
 
         public async Task<ISingleResult<Card>> Incluir(XyzMonster entity)
@@ -110,7 +112,8 @@ namespace YGO7.Core.Services
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+            Card teste = entity;
+            return new InclusaoResult<Card>(teste);
         }
 
         public async Task<ISingleResult<Card>> Incluir(Card entity)
@@ -124,7 +127,23 @@ namespace YGO7.Core.Services
                 return new SingleResult<Card>(MensagensNegocio.MSG07);
             }
 
-            return new InclusaoResult<Card>(entity);
+            Card teste = entity;
+            return new InclusaoResult<Card>(teste);
+        }
+        
+        public async Task<ISingleResult<Card>> Incluir(Monster entity)
+        {
+            try
+            {
+                await _cards.InsertOneAsync(entity);
+            }
+            catch (Exception)
+            {
+                return new SingleResult<Card>(MensagensNegocio.MSG07);
+            }
+
+            Card teste = entity;
+            return new InclusaoResult<Card>(teste);
         }
         
         public async Task<ISingleResult<Card>> Incluir(SpellCard entity)
